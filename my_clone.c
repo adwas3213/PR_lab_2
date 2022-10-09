@@ -32,7 +32,7 @@ int funkcja_watku( void* argument )
 int funkcja_watku_wykorzystujaca_argument( void* argument )
 {
     for(int i=0;i<100000;i++)
-        (int) *(argument)=(int)*(argument)+1;
+        *(*int) (argument)=*(*int)(argument)+1;
 
     /* int wynik; */
     /* wynik=execv("./program",NULL); */
