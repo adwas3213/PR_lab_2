@@ -11,10 +11,10 @@ OPT = -g -DDEBUG
 # OPT = -O3
 
 # pliki naglowkowe
-INC = -I../pomiar_czasu
+INC = -Ipomiar_czasu
 
 # biblioteki
-LIB = -L../pomiar_czasu -lpomiar_czasu -lm
+LIB = -Lpomiar_czasu -lpomiar_czasu -lm
 
 # zaleznosci i komendy
 fork: fork.o 
