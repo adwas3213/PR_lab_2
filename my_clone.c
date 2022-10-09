@@ -24,8 +24,9 @@ int funkcja_watku( void* argument )
     /* wynik=execv("./program",NULL); */
     /* if(wynik==-1) */
     /*   printf("Proces potomny nie wykonal programu\n"); */
-    drukuj_czas();
     printf("Wykonana funkcja wykorzystujaca zmienna globalna");
+    drukuj_czas();
+
     return 0;
 }
 
@@ -38,8 +39,9 @@ int funkcja_watku_wykorzystujaca_argument( void* argument )
     /* wynik=execv("./program",NULL); */
     /* if(wynik==-1) */
     /*   printf("Proces potomny nie wykonal programu\n"); */
-    drukuj_czas();
     printf("Wykonana funkcja wykorzystujaca argument");
+    drukuj_czas();
+
     return 0;
 }
 
