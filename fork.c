@@ -24,7 +24,7 @@ main(){
       
     } else {					
       
-      wait(NULL);
+//      wait(NULL);
       
     }
   }

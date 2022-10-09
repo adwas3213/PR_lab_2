@@ -21,7 +21,7 @@ fork: fork.o
 	$(LOADER) $(OPT) fork.o -o fork $(LIB)
 
 # jak uzyskac plik fork.o ?
-fork.o: fork.c ../pomiar_czasu/pomiar_czasu.h
+fork.o: fork.c pomiar_czasu/pomiar_czasu.h
 	$(CCOMP) -c $(OPT) fork.c $(INC) 
 
 # zaleznosci i komendy
@@ -29,7 +29,7 @@ clone: clone.o
 	$(LOADER) $(OPT) clone.o -o clone $(LIB)
 
 # jak uzyskac plik clone.o ?
-clone.o: clone.c ../pomiar_czasu/pomiar_czasu.h
+clone.o: clone.c pomiar_czasu/pomiar_czasu.h
 	$(CCOMP) -c $(OPT) clone.c $(INC) 
 
 clean:
