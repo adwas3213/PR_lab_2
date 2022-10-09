@@ -32,7 +32,7 @@ int funkcja_watku( void* argument )
 int funkcja_watku_wykorzystujaca_argument( void* argument )
 {
     for(int i=0;i<100000;i++)
-    argument[0]++;
+        (*argument)+=1;
 
     /* int wynik; */
     /* wynik=execv("./program",NULL); */
@@ -56,12 +56,12 @@ main()
         exit( 1 );
     }
 
-
+    int przekazywany=0;
     inicjuj_czas();
     pid=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
                CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0 );
     pid2=clone( &funkcja_watku_wykorzystujaca_argument, (void *) stos+ROZMIAR_STOSU,
-                CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0 );
+                CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, &przekazywany );
 //    drukuj_czas();
 
     free( stos );
