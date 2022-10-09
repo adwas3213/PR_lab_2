@@ -11,10 +11,10 @@ LOADER = gcc
 OPT = -O3
 
 # pliki naglowkowe
-INC = -I../pomiar_czasu
+INC = -Ipomiar_czasu
 
 # biblioteki
-LIB = -L../pomiar_czasu -lpomiar_czasu -lm
+LIB = -Lpomiar_czasu -lpomiar_czasu -lm
 
 # zaleznosci i komendy
 fork: fork.o 
@@ -30,7 +30,7 @@ clone: clone.o
 
 # jak uzyskac plik clone.o ?
 clone.o: clone.c pomiar_czasu/pomiar_czasu.h
-	$(CCOMP) -c $(OPT) clone.c $(INC)
+	$(CCOMP) -c $(OPT) clone.c $(INC) 
 
 my_clone.o: my_clone.c pomiar_czasu/pomiar_czasu.h
 	$(CCOMP) -c $(OPT) my_clone.c $(INC)
