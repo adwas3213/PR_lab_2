@@ -19,7 +19,7 @@ int funkcja_watku( void* argument )
 {
 
 
-    zmienna_lokalna= *((int *)argument);
+   int zmienna_lokalna= *((int *)argument);
     for(int i=0;i<100000;i++)
     {
       zmienna_lokalna =zmienna_lokalna+1;
