@@ -29,7 +29,7 @@ int funkcja_watku( void* argument )
     /* wynik=execv("./program",NULL); */
     /* if(wynik==-1) */
     /*   printf("Proces potomny nie wykonal programu\n"); */
-    drukuj_czas();
+
     printf("Zmienna przekazana do funkcji za pomoca argumentu %d\n",*((int *)argument));
     printf("Zmienna przekazana do funkcji za zmienna lokalna %d\n",zmienna_lokalna);
     return 0;
@@ -51,7 +51,7 @@ int funkcja_watku_wykorzystujaca_argument( void* argument )
 main()
 {
 
-    void *stos;
+    void *stos,*stos2;
     pid_t pid,pid2;
     int i;
 
@@ -63,11 +63,11 @@ main()
 
     int przekazywany=0;
     void* wsk=&przekazywany;
-//    pid=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
-//               CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0 );
+    pid=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
+               CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, wsk );
 
-inicjuj_czas();
-    pid2=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
+
+    pid2=clone( &funkcja_watku, (void *) stos2+ROZMIAR_STOSU,
                 CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, wsk);
 //    drukuj_czas();
     printf("Przekazywana wartosc to : %d",przekazywany);
