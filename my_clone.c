@@ -31,8 +31,8 @@ int funkcja_watku( void* argument )
     /* if(wynik==-1) */
     /*   printf("Proces potomny nie wykonal programu\n"); */
     drukuj_czas();
-    printf("Zmienna przekazana do funkcji za pomoca argumentu %d\n"
-    "Wartosc zmiennej lokalnej %d",*((int *)argument),zmienna_lokalna);
+    printf("Zmienna przekazana do funkcji za pomoca argumentu %d\n",*((int *)argument));
+    printf("Zmienna przekazana do funkcji za pomoca argumentu %d\n",zmienna_lokalna)
     return 0;
 }
 
