@@ -66,7 +66,7 @@ main()
     void* wsk=&przekazywany;
 //    pid=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
 //               CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0 );
-    pid2=clone( &funkcja_watku_wykorzystujaca_argument, (void *) stos+ROZMIAR_STOSU,
+    pid2=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
                 CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, wsk);
 //    drukuj_czas();
 
