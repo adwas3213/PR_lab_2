@@ -56,6 +56,7 @@ main()
     int i;
 
     stos = malloc( ROZMIAR_STOSU );
+    stos2 = malloc( ROZMIAR_STOSU );
     if (stos == 0) {
         printf("Proces nadrzędny - blad alokacji stosu\n");
         exit( 1 );
