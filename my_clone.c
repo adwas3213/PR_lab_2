@@ -29,7 +29,7 @@ int funkcja_watku( void* argument )
     /* wynik=execv("./program",NULL); */
     /* if(wynik==-1) */
     /*   printf("Proces potomny nie wykonal programu\n"); */
-//    drukuj_czas();
+    drukuj_czas();
     printf("Zmienna przekazana do funkcji za pomoca argumentu %d\n",*((int *)argument));
     printf("Zmienna przekazana do funkcji za zmienna lokalna %d\n",zmienna_lokalna);
     return 0;
@@ -69,7 +69,7 @@ main()
 inicjuj_czas();
     pid2=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
                 CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, wsk);
-    drukuj_czas();
+//    drukuj_czas();
     printf("Przekazywana wartosc to : %d",przekazywany);
 
     free( stos );
