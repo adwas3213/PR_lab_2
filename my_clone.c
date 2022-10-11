@@ -62,7 +62,9 @@ main()
     }
 
     int przekazywany=0;
-    void* wsk=&przekazywany;
+
+    void* wsk= malloc(3000000);
+    wsk=&przekazywany;
     pid=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
                CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, wsk );
     pid2=clone( &funkcja_watku, (void *) stos2+ROZMIAR_STOSU,
