@@ -18,11 +18,12 @@ int zmienna_globalna=0;
 int funkcja_watku( void* argument )
 {
 
-    int zmienna_lokalna=0;
+
+    zmienna_lokalna= *((int *)argument);
     for(int i=0;i<100000;i++)
     {
-        zmienna_lokalna++;
-        *((int *)argument)=*(int *)(argument)+1;
+
+      zmienna_lokalna =zmienna_lokalna+1;
     }
 
     /* int wynik; */
