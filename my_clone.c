@@ -17,8 +17,7 @@ int zmienna_globalna=0;
 
 int funkcja_watku( void* argument )
 {
-    printf("Wykonana funkcja wykorzystujaca zmienna globalna");
-    inicjuj_czas();
+
     int zmienna_lokalna=0;
     for(int i=0;i<100000;i++)
     {
@@ -30,9 +29,9 @@ int funkcja_watku( void* argument )
     /* wynik=execv("./program",NULL); */
     /* if(wynik==-1) */
     /*   printf("Proces potomny nie wykonal programu\n"); */
-    drukuj_czas();
+//    drukuj_czas();
     printf("Zmienna przekazana do funkcji za pomoca argumentu %d\n",*((int *)argument));
-    printf("Zmienna przekazana do funkcji za pomoca argumentu %d\n",zmienna_lokalna)
+    printf("Zmienna przekazana do funkcji za pomoca argumentu %d\n",zmienna_lokalna);
     return 0;
 }
 
@@ -66,9 +65,11 @@ main()
     void* wsk=&przekazywany;
 //    pid=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
 //               CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0 );
+
+inicjuj_czas();
     pid2=clone( &funkcja_watku, (void *) stos+ROZMIAR_STOSU,
                 CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, wsk);
-//    drukuj_czas();
+    drukuj_czas();
 
     free( stos );
 }
